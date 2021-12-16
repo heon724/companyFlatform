@@ -1,14 +1,15 @@
-package com.flatform.companyFlatform.entity;
+package com.platform.companyPlatform.entity;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "CHATTING")
-public class Chatting {
+@Table(name = "SUGGESTIONS")
+public class Suggestions {
+
     @Id
-    @Column(name = "chatting_seq")
-    private long chattingSeq;
+    @Column(name = "suggestion_seq")
+    private long suggestSeq;
 
     @Column(nullable = false)
     private String empId;
@@ -19,6 +20,9 @@ public class Chatting {
 
     @Column(nullable = false)
     private String title;
+
+    @Column(nullable = false)
+    private String content;
 
     @Column(name = "update_time")
     private LocalDateTime updateTime;

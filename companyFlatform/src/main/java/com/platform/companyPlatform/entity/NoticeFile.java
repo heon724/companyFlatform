@@ -1,6 +1,4 @@
-package com.flatform.companyFlatform.entity;
-
-import org.springframework.boot.context.properties.bind.Name;
+package com.platform.companyPlatform.entity;
 
 import javax.persistence.*;
 import java.time.LocalDate;

@@ -1,4 +1,4 @@
-package com.flatform.companyFlatform.entity;
+package com.platform.companyPlatform.entity;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;

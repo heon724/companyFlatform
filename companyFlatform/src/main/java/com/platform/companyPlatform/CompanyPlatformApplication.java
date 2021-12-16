@@ -1,13 +1,13 @@
-package com.flatform.companyFlatform;
+package com.platform.companyPlatform;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CompanyFlatformApplication {
+public class CompanyPlatformApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CompanyFlatformApplication.class, args);
+		SpringApplication.run(CompanyPlatformApplication.class, args);
 	}
 
 }
