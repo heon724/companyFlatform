@@ -3,17 +3,18 @@ package com.platform.companyPlatform.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "CHATTINGPARTICIPANT")
+@Table(name = "chattingparticipant")
 public class ChattingParticipant {
     @Id
-    @Column(name = "chatting_seq")
-    private long chattingSeq;
+    @Column(name = "chat_room_name")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long chatRoomName;
 
     @ManyToOne
     @JoinColumn(name="chatting_seq")
     private Chatting chatting;
 
-    @Column(nullable = false)
+    @Column(name="employee_id",nullable = false)
     private String empId;
 
     @Column(nullable = false)

@@ -4,15 +4,11 @@ package com.platform.companyPlatform.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "EMPLOYEE")
+@Table(name = "employee")
 public class Employee {
     @Id
-    @Column(name = "employee_id")
-    private String empId;
-
-    @OneToOne
-    @JoinColumn(name = "employee_id")
-    private EmployeeInfo employeeinfo;
+    @Column(name="employee_id")
+    private String id;
 
     @Column(nullable = false)
     private String password;

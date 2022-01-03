@@ -4,14 +4,12 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "NOTICE")
+@Table(name = "notice")
 public class Notice {
     @Id
     @Column(name = "notice_seq")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long noticeSeq;
-
-    @Column(nullable = false)
-    private String empId;
 
     @ManyToOne
     @JoinColumn(name="employee_id")

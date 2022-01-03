@@ -1,16 +1,16 @@
 package com.platform.companyPlatform.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "EMPLOYEEINFO")
-public class EmployeeInfo {
-    @Id
-    @Column(name = "employee_id")
-    private String empId;
+@Table(name = "employeeinfo")
+public class EmployeeInfo implements Serializable {
 
-    @OneToOne(mappedBy = "employee_info")
+    @Id
+    @OneToOne
+    @JoinColumn(name ="employee_id")
     private Employee employee;
 
     @Column(nullable = false)
@@ -18,9 +18,6 @@ public class EmployeeInfo {
 
     @Column(nullable = false)
     private LocalDate hireDate;
-
-    @Column(name = "Dept_id")
-    private String deptId;
 
     @ManyToOne
     @JoinColumn(name="dept_id")

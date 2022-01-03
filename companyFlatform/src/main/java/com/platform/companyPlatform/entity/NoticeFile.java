@@ -4,10 +4,13 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "NOTICE_FILE")
+@Table(name = "noticefile")
 public class NoticeFile {
     @Id
+    @Column(name ="notice_file_seq")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long noticeFileSeq;
+
 
     @ManyToOne
     @JoinColumn(name = "notice_seq")

@@ -4,15 +4,13 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "SUGGESTIONS")
+@Table(name = "suggestions")
 public class Suggestions {
 
     @Id
     @Column(name = "suggestion_seq")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long suggestSeq;
-
-    @Column(nullable = false)
-    private String empId;
 
     @ManyToOne
     @JoinColumn(name="employee_id")
@@ -26,4 +24,5 @@ public class Suggestions {
 
     @Column(name = "update_time")
     private LocalDateTime updateTime;
+
 }

@@ -4,14 +4,11 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "COMPANYLOGO")
+@Table(name = "companylogo")
 public class CompanyLogo {
     @Id
-    @Column(name = "BI_id")
-    private String BiId;
-
-    @Column(nullable = false)
-    private String companyId;
+    @Column(name = "bl_id")
+    private String biId;
 
     @ManyToOne
     @JoinColumn(name="company_id")

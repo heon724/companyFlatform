@@ -1,12 +1,19 @@
 package com.platform.companyPlatform.entity;
 
-import javax.persistence.*;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.time.LocalDate;
+
+@Getter
 @Entity
-@Table(name = "COMPANY")
+@NoArgsConstructor
+
+@Table(name = "company")
 public class Company {
     @Id
     @Column(name = "company_id")
@@ -21,10 +28,12 @@ public class Company {
     @Column(unique = true)
     private String phone;
 
+    @Column(unique = true)
+    private String email;
+
     @Column(nullable = false)
     private LocalDate foundDate;
 
-    @OneToMany(mappedBy = "board")
-    List<Department> posts = new ArrayList<>();
+
 
 }

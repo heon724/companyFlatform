@@ -4,11 +4,12 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "SCHEDULE")
+@Table(name = "schedule")
 public class Schedule {
 
     @Id
     @Column(name = "schedule_seq")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long scheduleSeq;
 
     @Column(nullable = false)
@@ -19,9 +20,6 @@ public class Schedule {
 
     @Column(nullable = false, name = "end_time")
     private LocalDateTime endTime;
-
-    @Column(nullable = false)
-    private String empId;
 
     @ManyToOne
     @JoinColumn(name="employee_id")

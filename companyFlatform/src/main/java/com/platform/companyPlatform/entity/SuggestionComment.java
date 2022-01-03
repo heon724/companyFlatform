@@ -5,11 +5,12 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "SUGGESTIONCOMMENT")
+@Table(name = "suggestioncomment")
 public class SuggestionComment {
     @Id
-    @Column(name = "suggestion_seq")
-    private long suggestSeq;
+    @Column(name = "comment_seq")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long commentSeq;
 
     @ManyToOne
     @JoinColumn(name="suggestion_seq")

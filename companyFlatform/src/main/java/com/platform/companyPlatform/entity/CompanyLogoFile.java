@@ -5,14 +5,15 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "COMPANYLOGOFile")
+@Table(name = "companylogofile")
 public class CompanyLogoFile {
     @Id
-    @Column(name = "logo_id")
-    private String logoId;
+    @Column(name = "logo_file_seq")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long logoFileSeq;
 
     @ManyToOne
-    @JoinColumn(name = "BI_id")
+    @JoinColumn(name = "bl_id")
     private CompanyLogo companyLogo;
 
     @Column(name = "logo_file_name")
