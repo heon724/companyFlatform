@@ -1,11 +1,15 @@
 package com.platform.companyPlatform.serviceImpl;
 
 import com.platform.companyPlatform.dto.company.CompanyDupCheckDto;
+import com.platform.companyPlatform.exception.CompanyException;
 import com.platform.companyPlatform.repository.CompanyRepository;
 import com.platform.companyPlatform.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+
+import java.util.Locale;
 
 @Service
 public class CompanyServiceImpl implements CompanyService {
@@ -20,13 +24,14 @@ public class CompanyServiceImpl implements CompanyService {
     public CompanyDupCheckDto companyDupCheckId(String id) {
         String idDupCheck = companyRepository.findByCompanyId(id);
 
-        if(idDupCheck==null) {
+        if (idDupCheck != null) {
             return CompanyDupCheckDto.builder()
-                    .dupCheck("성공")
+                    .httpStatus(HttpStatus.OK)
+                    .dupCheck("N")
                     .build();
+        } else {
+            throw new CompanyException(HttpStatus.BAD_REQUEST,
+                                messageSource.getMessage("aaa", new String[]{id, "ddd"}, Locale.KOREA));
         }
-        return CompanyDupCheckDto.builder()
-                .dupCheck("실패")
-                .build();
     }
 }

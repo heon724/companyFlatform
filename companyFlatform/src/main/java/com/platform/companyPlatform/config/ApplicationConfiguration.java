@@ -13,7 +13,7 @@ public class ApplicationConfiguration {
     public MessageSource messageSource() {
         ResourceBundleMessageSource source = new ResourceBundleMessageSource();
         source.setBasenames("messages/messages");
-        source.setUseCodeAsDefaultMessage(true);
+        source.setUseCodeAsDefaultMessage(false);
         source.setDefaultEncoding(StandardCharsets.UTF_8.name());
         return source;
     }

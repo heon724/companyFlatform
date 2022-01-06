@@ -1,5 +1,6 @@
 package com.platform.companyPlatform.exception;
 
+import com.platform.companyPlatform.component.ErrorCode;
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
@@ -7,19 +8,7 @@ import org.springframework.http.HttpStatus;
 public class CompanyException extends CompanyRuntimeException{
     String msgKey;
     HttpStatus status;
-    String[] args;
-
-
-    public CompanyException(String msgKey) {
-        super(msgKey);
-        this.msgKey= msgKey;
-    }
-
-    public CompanyException(String msgKey, String[] args) {
-        super(msgKey);
-        this.msgKey = msgKey;
-        this.args = args;
-    }
+    ErrorCode errorCode;
 
     public CompanyException(HttpStatus status, String msgKey) {
         super(msgKey);
@@ -27,24 +16,13 @@ public class CompanyException extends CompanyRuntimeException{
         this.status = status;
     }
 
-    public CompanyException(HttpStatus status, String msgKey, String[] args) {
+    public CompanyException(String msgKey) {
         super(msgKey);
         this.msgKey = msgKey;
-        this.status = status;
-        this.args = args;
     }
-
-    public CompanyException(HttpStatus status, String msgKey, Throwable cause) {
-        super(msgKey, cause);
+    public CompanyException(String msgKey,ErrorCode errorCode) {
+        super(msgKey);
+        this.errorCode= errorCode;
         this.msgKey = msgKey;
-        this.status = status;
-    }
-
-
-    public CompanyException(HttpStatus status, String msgKey, String[] args, Throwable cause) {
-        super(msgKey, cause);
-        this.msgKey = msgKey;
-        this.status = status;
-        this.args = args;
     }
 }
