@@ -1,9 +1,12 @@
 package com.platform.companyPlatform.entity;
 
 
+import lombok.Getter;
+
 import javax.persistence.*;
 
 @Entity
+@Getter
 @Table(name = "employee")
 public class Employee {
     @Id

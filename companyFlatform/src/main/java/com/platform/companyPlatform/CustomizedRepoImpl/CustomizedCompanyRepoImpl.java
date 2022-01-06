@@ -22,4 +22,12 @@ public class CustomizedCompanyRepoImpl implements CustomizedCompanyRepo {
                 .fetchOne();
 //        return null;
     }
+
+    @Override
+    public String findByCompanyEmail(String email) {
+        return jpaQueryFactory.select(company.email)
+                .from(company)
+                .where(company.email.eq(email))
+                .fetchOne();
+    }
 }

@@ -4,6 +4,7 @@ import com.platform.companyPlatform.dto.company.CompanyDupCheckDto;
 
 public interface CompanyService {
      CompanyDupCheckDto companyDupCheckId(String id);
+     CompanyDupCheckDto companyDupCheckEmail(String email);
 
 
 }
