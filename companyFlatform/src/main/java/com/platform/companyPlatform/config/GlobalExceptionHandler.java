@@ -1,5 +1,6 @@
 package com.platform.companyPlatform.config;
 
+
 import com.platform.companyPlatform.component.ErrorCode;
 import com.platform.companyPlatform.component.ErrorResponse;
 import com.platform.companyPlatform.exception.CompanyException;

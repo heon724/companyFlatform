@@ -27,11 +27,11 @@ public class CompanyController {
         return companyService.companyDupCheckId(id);
     }
 
-    @GetMapping("/company/dupCheck-email/{email}")
-    @ApiOperation(value = "회사이메일 중복 체크", response =CompanyDupCheckDto.class )
-    public CompanyDupCheckDto companyDupCheckEmail(@PathVariable("email") String email) {
-        return companyService.companyDupCheckEmail(email);
-    }
+//    @GetMapping("/company/dupCheck-email/{email}")
+//    @ApiOperation(value = "회사이메일 중복 체크", response =CompanyDupCheckDto.class )
+//    public CompanyDupCheckDto companyDupCheckEmail(@PathVariable("email") String email) {
+//        return companyService.companyDupCheckEmail(email);
+//    }
 
 
 
