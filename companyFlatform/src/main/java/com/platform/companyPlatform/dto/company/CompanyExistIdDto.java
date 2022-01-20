@@ -6,13 +6,16 @@ import lombok.Data;
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
+import java.util.List;
+
 @Getter
 @Data
 @Builder
-@ApiModel("회사 중복체크")
-public class CompanyDupCheckDto {
+@ApiModel("등록된 회사 찾기")
+public class CompanyExistIdDto {
 
-    private String dupCheck;
+    private List<CompanyIdDto> existId;
     private HttpStatus httpStatus;
     private String msg;
+
 }

@@ -1,17 +1,16 @@
 package com.platform.companyPlatform.entity;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.time.LocalDate;
 
-@Getter
+@Data
 @Entity(name="company")
 @NoArgsConstructor
-
+@AllArgsConstructor
+@Builder
 
 public class Company {
     @Id
@@ -31,7 +30,7 @@ public class Company {
     private String email;
 
     @Column(nullable = false)
-    private LocalDate foundDate;
+    private String foundDate;
 
 
 

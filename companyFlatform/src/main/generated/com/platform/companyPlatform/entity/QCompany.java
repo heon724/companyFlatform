@@ -23,7 +23,7 @@ public class QCompany extends EntityPathBase<Company> {
 
     public final StringPath email = createString("email");
 
-    public final DatePath<java.time.LocalDate> foundDate = createDate("foundDate", java.time.LocalDate.class);
+    public final StringPath foundDate = createString("foundDate");
 
     public final StringPath info = createString("info");
 
